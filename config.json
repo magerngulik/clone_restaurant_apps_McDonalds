@@ -1,0 +1,11 @@
+{
+    "modules": [
+        "waiting",
+        "select_service",
+        "select_payment",
+        "form_main_menu",
+        "widget/alert_containt",
+        "admin/menu_admin",
+        "admin/add_menu_item"
+    ]
+}
