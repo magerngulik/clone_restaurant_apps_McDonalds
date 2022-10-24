@@ -192,49 +192,61 @@ class FormMainMenuView extends StatefulWidget {
                                           return Container();
                                         }
                                       }
-                                      return Container(
-                                        height: 120.0,
-                                        width: 140.0,
-                                        margin:
-                                            const EdgeInsets.only(top: 10.0),
-                                        decoration: const BoxDecoration(
-                                          borderRadius: BorderRadius.all(
-                                            Radius.circular(
-                                              5.0,
-                                            ),
-                                          ),
-                                        ),
-                                        child: Column(
-                                          children: [
-                                            Container(
-                                              height: 80.0,
-                                              width: 80.0,
-                                              decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                    image: NetworkImage(
-                                                      "${item['photo']}",
-                                                    ),
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                  borderRadius:
-                                                      const BorderRadius.all(
-                                                    Radius.circular(
-                                                      5.0,
-                                                    ),
-                                                  )),
-                                            ),
-                                            const SizedBox(
-                                              height: 5.0,
-                                            ),
-                                            Text(
-                                              "${item['menu_title']}",
-                                              textAlign: TextAlign.center,
-                                              style: const TextStyle(
-                                                fontSize: 12.0,
-                                                fontWeight: FontWeight.bold,
+                                      return InkWell(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    DetailItemView(
+                                                      item: item,
+                                                    )),
+                                          );
+                                        },
+                                        child: Container(
+                                          height: 120.0,
+                                          width: 140.0,
+                                          margin:
+                                              const EdgeInsets.only(top: 10.0),
+                                          decoration: const BoxDecoration(
+                                            borderRadius: BorderRadius.all(
+                                              Radius.circular(
+                                                5.0,
                                               ),
                                             ),
-                                          ],
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              Container(
+                                                height: 80.0,
+                                                width: 80.0,
+                                                decoration: BoxDecoration(
+                                                    image: DecorationImage(
+                                                      image: NetworkImage(
+                                                        "${item['photo']}",
+                                                      ),
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                    borderRadius:
+                                                        const BorderRadius.all(
+                                                      Radius.circular(
+                                                        5.0,
+                                                      ),
+                                                    )),
+                                              ),
+                                              const SizedBox(
+                                                height: 5.0,
+                                              ),
+                                              Text(
+                                                "${item['menu_title']}",
+                                                textAlign: TextAlign.center,
+                                                style: const TextStyle(
+                                                  fontSize: 12.0,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       );
                                     },
@@ -261,18 +273,48 @@ class FormMainMenuView extends StatefulWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: 25.0,
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                color: Colors.red,
-              ),
-              child: const Text(
-                " Pesanan Saya",
-                style: TextStyle(
-                  fontSize: 18.0,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+            Expanded(
+              child: Container(
+                height: 25.0,
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(
+                  color: Colors.red,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      " Pesanan Saya | ${controller.selectedService}",
+                      style: const TextStyle(
+                        fontSize: 15.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const OrderItemView()),
+                          );
+                        },
+                        child: const Text(
+                          " Lihat Order",
+                          textAlign: TextAlign.end,
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20.0,
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -290,10 +332,10 @@ class FormMainMenuView extends StatefulWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
-                      "Total IDR 20000 | Item 3",
-                      style: TextStyle(
+                      "Total IDR ${controller.alltotal.toString()} | Item ${controller.orderSelected.length}",
+                      style: const TextStyle(
                         fontSize: 15.0,
                       ),
                     ),

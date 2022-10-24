@@ -1,14 +1,26 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fhe_template/services/menu_services.dart';
+import 'package:fhe_template/core.dart';
 import 'package:flutter/material.dart';
-import 'package:fhe_template/state_util.dart';
-import '../view/form_main_menu_view.dart';
 
 class FormMainMenuController extends State<FormMainMenuView>
     implements MvcController {
   static late FormMainMenuController instance;
   late FormMainMenuView view;
   var selectedMenu = "";
+  String selectedService = SelectServiceController.instance.serviceSelected;
+  List orderSelected = [];
+  int total = 0;
+  int alltotal = 0;
+
+  hitungTotal() {
+    for (var i = 0; i < orderSelected.length; i++) {
+      var item = orderSelected[i];
+      var harga = int.parse(item["price"].toString());
+      var jumlah = int.parse(item["jumlah"].toString());
+      total = harga * jumlah;
+      alltotal = total + alltotal;
+    }
+  }
 
   addDataMenu() async {
     for (var i = 0; i < MenuServices.menu_list.length; i++) {
@@ -18,6 +30,21 @@ class FormMainMenuController extends State<FormMainMenuView>
         "img_photo": item['img_photo'],
       });
     }
+  }
+
+  addDataToOrder(
+      {required String uid,
+      required String title,
+      required int jumlah,
+      required String foto,
+      required int price}) {
+    orderSelected.add({
+      "uid_item": uid,
+      "title": title,
+      "jumlah": jumlah,
+      "photo": foto,
+      "price": price
+    });
   }
 
   addDataItemMenu(String uid) async {
@@ -39,6 +66,7 @@ class FormMainMenuController extends State<FormMainMenuView>
 
   @override
   void initState() {
+    hitungTotal();
     instance = this;
     super.initState();
   }

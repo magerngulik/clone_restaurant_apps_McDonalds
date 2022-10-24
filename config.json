@@ -6,6 +6,8 @@
         "form_main_menu",
         "widget/alert_containt",
         "admin/menu_admin",
-        "admin/add_menu_item"
+        "admin/add_menu_item",
+        "detail_item",
+        "order_item"
     ]
 }
