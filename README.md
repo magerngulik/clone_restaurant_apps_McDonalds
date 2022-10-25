@@ -16,6 +16,20 @@ Ini hanya di peruntukan untuk proses pembelajaran tidak bermaksud untuk memperju
 - menambahkan pesanan
 - membatalkan pesanan
 
+## Screenshot
+### Screen Pilih Menu dan Screen Menu Admin
+![alt text](https://raw.githubusercontent.com/magerngulik/clone_restaurant_apps_McDonalds/main/lib/assets/presentation/1%20Selected%20Menu%20and%20menu%20admin.jpg)
+### Screen Order List dan Screen Detail Order
+![alt text](https://raw.githubusercontent.com/magerngulik/clone_restaurant_apps_McDonalds/main/lib/assets/presentation/2%20Order%20List%20and%20Detail%20Order%20.jpg)
+
+
+
+### Screen Terima Pesanan
+### Screen Pesanan Selesai
+### Screen List Menu
+### Screen Menu Item
+### Screen Add and Edit Menu Item
+
 
 ## Dependencies Flutter 
 Berikut ini merupakan depedensi yang di gunakan untuk pembuatan aplikasi ini:
