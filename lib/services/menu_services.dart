@@ -2,6 +2,35 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class MenuServices {
+  static deleteMenuItem(String uid) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection("menu_item")
+          .doc(uid)
+          .delete();
+    } catch (e) {
+      debugPrint("Gagal Update: Gagal Update");
+    }
+  }
+
+  static updateMenuItem(
+      {required String uid,
+      required String title,
+      required String image,
+      required int price,
+      required String menuid}) async {
+    try {
+      await FirebaseFirestore.instance.collection("menu_item").doc(uid).update({
+        "menu_title": title,
+        "photo": image,
+        "price": price,
+        "uid": menuid,
+      });
+    } catch (e) {
+      debugPrint("status: Gagal Update");
+    }
+  }
+
   static var menu_list = [
     {
       "uid": "1",
@@ -51,15 +80,4 @@ class MenuServices {
     "https://cashbac.com/blog/wp-content/uploads/2021/03/cashbac-mcdonalds-bri-direct-debit-50-selasa-banner.jpg",
     "https://nos.jkt-1.neo.id/mcdonalds/promos/December2021/IUmeKMRY6das5RiGHUvN.jpg"
   ];
-
-  static deleteMenuItem(String uid) async {
-    try {
-      await FirebaseFirestore.instance
-          .collection("menu_item")
-          .doc(uid)
-          .delete();
-    } catch (e) {
-      debugPrint("Gagal Update: Gagal Update");
-    }
-  }
 }

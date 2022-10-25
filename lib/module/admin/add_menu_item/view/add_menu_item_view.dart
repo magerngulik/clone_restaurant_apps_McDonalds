@@ -6,7 +6,8 @@ import '../../../../shared/widget/image_picker/image_picker.dart';
 import '../controller/add_menu_item_controller.dart';
 
 class AddMenuItemView extends StatefulWidget {
-  const AddMenuItemView({Key? key}) : super(key: key);
+  Map? item;
+  AddMenuItemView({this.item, Key? key}) : super(key: key);
 
   Widget build(context, AddMenuItemController controller) {
     controller.view = this;
@@ -34,12 +35,12 @@ class AddMenuItemView extends StatefulWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ExTextField(
-                id: "title_menu",
-                label: "Title",
-                onChanged: (value) {
-                  controller.title = value;
-                },
-              ),
+                  id: "title_menu",
+                  label: "Title",
+                  onChanged: (value) {
+                    controller.title = value;
+                  },
+                  value: item != null ? item!['menu_title'] : null),
               ExTextField(
                 id: "price",
                 label: "Price",
@@ -47,15 +48,22 @@ class AddMenuItemView extends StatefulWidget {
                 onChanged: (text) {
                   controller.price = text;
                 },
+                value: item != null ? item!['price'].toString() : null,
               ),
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: QimagePicker(
                   onChanged: (value) {
-                    controller.image = value;
+                    if (item != null) {
+                      controller.image = item!['photo'];
+                    } else {
+                      controller.image = value;
+                    }
                   },
                   label: "Photo product",
-                  value: "https://i.ibb.co/S32HNjD/no-image.jpg",
+                  value: item != null
+                      ? item!['photo']
+                      : "https://i.ibb.co/S32HNjD/no-image.jpg",
                   id: "photo",
                 ),
               ),
@@ -127,7 +135,7 @@ class AddMenuItemView extends StatefulWidget {
                   controller.addDataItemMenu();
                   controller.refresh;
                 },
-                label: "SIMPAN",
+                label: item != null ? "UPDATE" : "SIMPAN",
                 fontSize: 18,
                 color: Colors.red,
               )

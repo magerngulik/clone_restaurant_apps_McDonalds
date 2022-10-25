@@ -30,8 +30,7 @@ class MenuAdminView extends StatefulWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                    builder: (context) => const AddMenuItemView()),
+                MaterialPageRoute(builder: (context) => AddMenuItemView()),
               );
             },
             child: const Text("Tambah data"),
@@ -83,7 +82,7 @@ class MenuAdminView extends StatefulWidget {
                                   child: ListBody(
                                     children: const <Widget>[
                                       Text(
-                                          'Are you sure you want to delete this item?'),
+                                          'Apakah anda yakin untuk menghapus data ini?'),
                                     ],
                                   ),
                                 ),
@@ -99,7 +98,7 @@ class MenuAdminView extends StatefulWidget {
                                   ),
                                   ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.blueGrey,
+                                      backgroundColor: Colors.red,
                                     ),
                                     onPressed: () {
                                       confirm = true;
@@ -116,36 +115,47 @@ class MenuAdminView extends StatefulWidget {
                           }
                           return Future.value(false);
                         },
-                        child: Container(
-                          margin: const EdgeInsets.only(
-                            bottom: 10.0,
-                          ),
-                          height: 100.0,
-                          decoration: const BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(
-                                16.0,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AddMenuItemView(
+                                        item: item,
+                                      )),
+                            );
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(
+                              bottom: 10.0,
+                            ),
+                            height: 100.0,
+                            decoration: const BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(
+                                  16.0,
+                                ),
                               ),
                             ),
-                          ),
-                          child: Card(
-                            child: Center(
-                              child: ListTile(
-                                leading: CircleAvatar(
-                                  radius: 40,
-                                  backgroundColor: Colors.grey[200],
-                                  backgroundImage: NetworkImage(
-                                    "${item['photo']}",
+                            child: Card(
+                              child: Center(
+                                child: ListTile(
+                                  leading: CircleAvatar(
+                                    radius: 40,
+                                    backgroundColor: Colors.grey[200],
+                                    backgroundImage: NetworkImage(
+                                      "${item['photo']}",
+                                    ),
                                   ),
-                                ),
-                                title: Text(
-                                  "${item['menu_title']}",
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
+                                  title: Text(
+                                    "${item['menu_title']}",
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
+                                  subtitle: Text("Rp. ${item['price']}"),
                                 ),
-                                subtitle: Text("Rp. ${item['price']}"),
                               ),
                             ),
                           ),

@@ -334,7 +334,7 @@ class FormMainMenuView extends StatefulWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Total IDR ${controller.alltotal.toString()} | Item ${controller.orderSelected.length}",
+                      "Total IDR ${controller.alltotal} | Item ${controller.orderSelected.length}",
                       style: const TextStyle(
                         fontSize: 15.0,
                       ),
@@ -355,7 +355,13 @@ class FormMainMenuView extends StatefulWidget {
                         borderRadius: BorderRadius.circular(5), // <-- Radius
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const WaitingView()),
+                          (Route<dynamic> route) => false);
+                    },
                     child: const Text("Batalkan Pesanan"),
                   ),
                 ),
@@ -372,7 +378,11 @@ class FormMainMenuView extends StatefulWidget {
                       ),
                     ),
                     onPressed: () {
-                      // controller.addDataMenu();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const OrderItemView()),
+                      );
                     },
                     child: const Text("Selesai"),
                   ),

@@ -22,7 +22,8 @@ class DetailItemController extends State<DetailItemView>
 
     FormMainMenuController.instance.addDataToOrder(
         uid: uid, title: title, jumlah: jmlOrder, foto: foto, price: price);
-    FormMainMenuController.instance.refrest;
+    FormMainMenuController.instance.alltotal = 0;
+    FormMainMenuController.instance.hitungTotal();
     Navigator.pop(context);
   }
 

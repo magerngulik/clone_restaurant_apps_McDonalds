@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fhe_template/core.dart';
 import 'package:flutter/material.dart';
 
@@ -17,18 +16,11 @@ class FormMainMenuController extends State<FormMainMenuView>
       var item = orderSelected[i];
       var harga = int.parse(item["price"].toString());
       var jumlah = int.parse(item["jumlah"].toString());
+      debugPrint("jumlah: $jumlah");
+      debugPrint("harga: $harga");
       total = harga * jumlah;
       alltotal = total + alltotal;
-    }
-  }
-
-  addDataMenu() async {
-    for (var i = 0; i < MenuServices.menu_list.length; i++) {
-      var item = MenuServices.menu_list[i];
-      await FirebaseFirestore.instance.collection("menu_list").add({
-        "menu_name": item['menu_name'],
-        "img_photo": item['img_photo'],
-      });
+      setState(() {});
     }
   }
 
@@ -47,26 +39,15 @@ class FormMainMenuController extends State<FormMainMenuView>
     });
   }
 
-  addDataItemMenu(String uid) async {
-    try {
-      await FirebaseFirestore.instance.collection("menu_item").add({
-        "menu_title": "Himalayan Latte Frappe",
-        "photo":
-            "https://www.mcdelivery.co.id/id/static/1666452811275/assets/62/products/100220.png?",
-        "price": 43000,
-        "date_created": DateTime.now(),
-        "uid": uid,
-      });
-    } catch (e) {}
-  }
-
   get refrest {
     update();
   }
 
   @override
   void initState() {
+    int alltotal = 0;
     hitungTotal();
+
     instance = this;
     super.initState();
   }

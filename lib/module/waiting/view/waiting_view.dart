@@ -14,11 +14,11 @@ class WaitingView extends StatefulWidget {
           children: [
             Container(
               height: MediaQuery.of(context).size.height * 0.85,
-              decoration: BoxDecoration(
-                color: Colors.red[200],
-                image: const DecorationImage(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                image: DecorationImage(
                   image: NetworkImage(
-                    "https://i.ibb.co/3pPYd14/freeban.jpg",
+                    "https://smartcanucks.ca/wp-content/uploads/2019/12/unnamed-1.jpg",
                   ),
                   fit: BoxFit.cover,
                 ),

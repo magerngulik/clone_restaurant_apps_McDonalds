@@ -176,7 +176,7 @@ class DetailItemView extends StatefulWidget {
                   ),
                 ),
                 onPressed: () {
-                  int a = int.parse(item!["price"]);
+                  int a = int.parse(item!["price"].toString());
                   controller.onOrder(
                       item!["id"], item!["menu_title"], item!["photo"], a);
                 },
