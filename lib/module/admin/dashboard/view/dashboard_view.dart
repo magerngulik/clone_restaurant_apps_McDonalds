@@ -11,7 +11,17 @@ class DashboardView extends StatefulWidget {
       appBar: AppBar(
         backgroundColor: Colors.red,
         title: const Text("Menu Admin"),
-        actions: const [],
+        actions: const [
+          ImageIcon(
+            NetworkImage(
+              "https://cdn.pixabay.com/photo/2021/09/22/17/17/mcdonalds-6647433_1280.png",
+            ),
+            size: 30.0,
+          ),
+          SizedBox(
+            width: 20.0,
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

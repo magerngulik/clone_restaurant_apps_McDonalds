@@ -19,8 +19,13 @@ class DashboardController extends State<DashboardView>
     },
     {
       "photo1": "https://i.ibb.co/PGv8ZzG/me.jpg",
-      "menu_title": "Menu List",
+      "menu_title": "Menu list",
       "on_tap": const ItemMenuListView()
+    },
+    {
+      "photo1": "https://i.ibb.co/PGv8ZzG/me.jpg",
+      "menu_title": "Order compleate",
+      "on_tap": const OrderCompleateView()
     },
   ];
 

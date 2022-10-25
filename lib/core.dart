@@ -10,12 +10,16 @@ export 'package:fhe_template/module/admin/add_menu_item/view/add_menu_item_view.
 export 'package:fhe_template/module/admin/add_menu_item/widget/dropdown_task.dart';
 export 'package:fhe_template/module/admin/dashboard/controller/dashboard_controller.dart';
 export 'package:fhe_template/module/admin/dashboard/view/dashboard_view.dart';
+export 'package:fhe_template/module/admin/detail_menu_order/controller/detail_menu_order_controller.dart';
+export 'package:fhe_template/module/admin/detail_menu_order/view/detail_menu_order_view.dart';
 export 'package:fhe_template/module/admin/item_menu_list/controller/item_menu_list_controller.dart';
 export 'package:fhe_template/module/admin/item_menu_list/view/item_menu_list_view.dart';
 export 'package:fhe_template/module/admin/menu_admin/controller/menu_admin_controller.dart';
 export 'package:fhe_template/module/admin/menu_admin/view/menu_admin_view.dart';
 export 'package:fhe_template/module/admin/menu_order/controller/menu_order_controller.dart';
 export 'package:fhe_template/module/admin/menu_order/view/menu_order_view.dart';
+export 'package:fhe_template/module/admin/order_compleate/controller/order_compleate_controller.dart';
+export 'package:fhe_template/module/admin/order_compleate/view/order_compleate_view.dart';
 export 'package:fhe_template/module/detail_item/controller/detail_item_controller.dart';
 export 'package:fhe_template/module/detail_item/view/detail_item_view.dart';
 export 'package:fhe_template/module/form_main_menu/controller/form_main_menu_controller.dart';

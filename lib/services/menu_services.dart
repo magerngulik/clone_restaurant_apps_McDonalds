@@ -31,6 +31,24 @@ class MenuServices {
     }
   }
 
+  static addCompleteOrder({required Map item}) async {
+    await FirebaseFirestore.instance.collection("complete_order").add({
+      "created_at": DateTime.now(),
+      "item_order": item,
+    });
+  }
+
+  static deleteMenuOrder(String uid) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection("order_list")
+          .doc(uid)
+          .delete();
+    } catch (e) {
+      debugPrint("Status: Gagal Hapus");
+    }
+  }
+
   static var menu_list = [
     {
       "uid": "1",

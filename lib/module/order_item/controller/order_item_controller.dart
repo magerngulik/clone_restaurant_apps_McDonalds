@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fhe_template/core.dart';
 import 'package:flutter/material.dart';
 
+import '../../detail_item/view/order_compleate.dart';
+
 class OrderItemController extends State<OrderItemView>
     implements MvcController {
   static late OrderItemController instance;
@@ -119,7 +121,7 @@ class OrderItemController extends State<OrderItemView>
       FormMainMenuController.instance.alltotal = 0;
       FormMainMenuController.instance.refrest;
 
-      Get.offAll(const WaitingView());
+      Get.offAll(const CompleateStatus());
     } catch (e) {
       debugPrint("Status: Gagal memasukan data");
     }
