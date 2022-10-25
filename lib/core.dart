@@ -22,8 +22,11 @@ export 'package:fhe_template/module/admin/order_compleate/controller/order_compl
 export 'package:fhe_template/module/admin/order_compleate/view/order_compleate_view.dart';
 export 'package:fhe_template/module/detail_item/controller/detail_item_controller.dart';
 export 'package:fhe_template/module/detail_item/view/detail_item_view.dart';
+export 'package:fhe_template/module/detail_item/view/order_compleate.dart';
 export 'package:fhe_template/module/form_main_menu/controller/form_main_menu_controller.dart';
 export 'package:fhe_template/module/form_main_menu/view/form_main_menu_view.dart';
+export 'package:fhe_template/module/main_dashboard/controller/main_dashboard_controller.dart';
+export 'package:fhe_template/module/main_dashboard/view/main_dashboard_view.dart';
 export 'package:fhe_template/module/order_item/controller/order_item_controller.dart';
 export 'package:fhe_template/module/order_item/view/order_item_view.dart';
 export 'package:fhe_template/module/select_payment/controller/select_payment_controller.dart';

@@ -49,6 +49,17 @@ class MenuServices {
     }
   }
 
+  static deleteMenuList(String uid) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection("menu_list")
+          .doc(uid)
+          .delete();
+    } catch (e) {
+      debugPrint("Status: Gagal Hapus");
+    }
+  }
+
   static var menu_list = [
     {
       "uid": "1",

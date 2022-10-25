@@ -8,22 +8,22 @@ class DashboardController extends State<DashboardView>
 
   var menuList = [
     {
-      "photo1": "https://i.ibb.co/S32HNjD/no-image.jpg",
+      "photo1": "https://i.ibb.co/wYr63vw/cargo.png",
       "menu_title": "Menu Order",
       "on_tap": const MenuOrderView()
     },
     {
-      "photo1": "https://i.ibb.co/PGv8ZzG/me.jpg",
+      "photo1": "https://i.ibb.co/4t3wzBk/product.png",
       "menu_title": "Menu Item",
       "on_tap": const MenuAdminView()
     },
     {
-      "photo1": "https://i.ibb.co/PGv8ZzG/me.jpg",
+      "photo1": "https://i.ibb.co/HVDj3Dw/note.png",
       "menu_title": "Menu list",
       "on_tap": const ItemMenuListView()
     },
     {
-      "photo1": "https://i.ibb.co/PGv8ZzG/me.jpg",
+      "photo1": "https://i.ibb.co/DC9rpXp/file.png",
       "menu_title": "Order compleate",
       "on_tap": const OrderCompleateView()
     },

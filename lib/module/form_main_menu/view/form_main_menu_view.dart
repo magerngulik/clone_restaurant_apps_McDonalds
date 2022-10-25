@@ -10,32 +10,6 @@ class FormMainMenuView extends StatefulWidget {
     controller.view = this;
 
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: const Text(
-          "Main Screen",
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () {},
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.admin_panel_settings),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const MenuAdminView()),
-              );
-            },
-          )
-        ],
-      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -59,7 +33,7 @@ class FormMainMenuView extends StatefulWidget {
                 ),
               ),
               SizedBox(
-                height: 430,
+                height: 470,
                 width: MediaQuery.of(context).size.width,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -152,112 +126,208 @@ class FormMainMenuView extends StatefulWidget {
                     ),
                     //bagian data menu list
 
-                    Expanded(
-                      child: SizedBox(
-                        width: 100.0,
-                        height: 430,
-                        child: StreamBuilder<QuerySnapshot>(
-                          stream: FirebaseFirestore.instance
-                              .collection("menu_item")
-                              .snapshots(),
-                          builder: (context, snapshot) {
-                            if (snapshot.hasError) return const Text("Error");
-                            if (snapshot.data == null) return Container();
-                            if (snapshot.data!.docs.isEmpty) {
-                              return const Text("No Data");
-                            }
-                            final data = snapshot.data!;
-                            return SingleChildScrollView(
-                              scrollDirection: Axis.vertical,
-                              controller: ScrollController(),
-                              child: SizedBox(
-                                width: 100,
-                                height: 430,
-                                child: Wrap(
-                                  spacing: 8,
-                                  runSpacing: 5,
-                                  children: List.generate(
-                                    data.docs.length,
-                                    (index) {
-                                      Map<String, dynamic> item =
-                                          (data.docs[index].data()
-                                              as Map<String, dynamic>);
-                                      item["id"] = data.docs[index].id;
-                                      if (controller.selectedMenu.isNotEmpty) {
-                                        if (!item["uid"]
-                                            .toString()
-                                            .toLowerCase()
-                                            .contains(controller.selectedMenu
-                                                .toLowerCase())) {
-                                          return Container();
-                                        }
-                                      }
-                                      return InkWell(
-                                        onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    DetailItemView(
-                                                      item: item,
-                                                    )),
-                                          );
-                                        },
-                                        child: Container(
-                                          height: 120.0,
-                                          width: 140.0,
-                                          margin:
-                                              const EdgeInsets.only(top: 10.0),
-                                          decoration: const BoxDecoration(
-                                            borderRadius: BorderRadius.all(
+                    Container(
+                      height: 470.0,
+                      width: 280,
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 5.0, vertical: 10),
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(
+                            16.0,
+                          ),
+                        ),
+                      ),
+                      child: StreamBuilder<QuerySnapshot>(
+                        stream: FirebaseFirestore.instance
+                            .collection("menu_item")
+                            .snapshots(),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasError) return const Text("Error");
+                          if (snapshot.data == null) return Container();
+                          if (snapshot.data!.docs.isEmpty) {
+                            return const Text("No Data");
+                          }
+                          final data = snapshot.data!;
+                          return GridView.builder(
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                            ),
+                            itemCount: data.docs.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              Map<String, dynamic> item = (data.docs[index]
+                                  .data() as Map<String, dynamic>);
+                              item["id"] = data.docs[index].id;
+                              if (controller.selectedMenu.isNotEmpty) {
+                                if (!item["uid"]
+                                    .toString()
+                                    .toLowerCase()
+                                    .contains(controller.selectedMenu
+                                        .toLowerCase())) {
+                                  return Container();
+                                }
+                              }
+                              return InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => DetailItemView(
+                                              item: item,
+                                            )),
+                                  );
+                                },
+                                child: Container(
+                                  height: 120.0,
+                                  width: 140.0,
+                                  margin: const EdgeInsets.only(top: 10.0),
+                                  decoration: const BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(
+                                        5.0,
+                                      ),
+                                    ),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: 80.0,
+                                        width: 80.0,
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                              image: NetworkImage(
+                                                "${item['photo']}",
+                                              ),
+                                              fit: BoxFit.cover,
+                                            ),
+                                            borderRadius:
+                                                const BorderRadius.all(
                                               Radius.circular(
                                                 5.0,
                                               ),
-                                            ),
-                                          ),
-                                          child: Column(
-                                            children: [
-                                              Container(
-                                                height: 80.0,
-                                                width: 80.0,
-                                                decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                      image: NetworkImage(
-                                                        "${item['photo']}",
-                                                      ),
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                    borderRadius:
-                                                        const BorderRadius.all(
-                                                      Radius.circular(
-                                                        5.0,
-                                                      ),
-                                                    )),
-                                              ),
-                                              const SizedBox(
-                                                height: 5.0,
-                                              ),
-                                              Text(
-                                                "${item['menu_title']}",
-                                                textAlign: TextAlign.center,
-                                                style: const TextStyle(
-                                                  fontSize: 12.0,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                                            )),
+                                      ),
+                                      const SizedBox(
+                                        height: 5.0,
+                                      ),
+                                      Text(
+                                        "${item['menu_title']}",
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.bold,
                                         ),
-                                      );
-                                    },
+                                      ),
+                                    ],
                                   ),
                                 ),
-                              ),
-                            );
-                          },
-                        ),
+                              );
+                            },
+                          );
+                        },
                       ),
                     ),
+
+                    // SizedBox(
+                    //   width: MediaQuery.of(context).size.width * 0.5,
+                    //   height: 300,
+                    //   child: StreamBuilder<QuerySnapshot>(
+                    //     stream: FirebaseFirestore.instance
+                    //         .collection("menu_item")
+                    //         .snapshots(),
+                    //     builder: (context, snapshot) {
+                    //       if (snapshot.hasError) return const Text("Error");
+                    //       if (snapshot.data == null) return Container();
+                    //       if (snapshot.data!.docs.isEmpty) {
+                    //         return const Text("No Data");
+                    //       }
+                    //       final data = snapshot.data!;
+                    //       return SizedBox(
+                    //         width: 100,
+                    //         height: 200,
+                    //         child: Wrap(
+                    //           spacing: 8,
+                    //           runSpacing: 5,
+                    //           alignment: WrapAlignment.center,
+                    //           children: List.generate(
+                    //             data.docs.length,
+                    //             (index) {
+                    //               Map<String, dynamic> item = (data.docs[index]
+                    //                   .data() as Map<String, dynamic>);
+                    //               item["id"] = data.docs[index].id;
+                    //               if (controller.selectedMenu.isNotEmpty) {
+                    //                 if (!item["uid"]
+                    //                     .toString()
+                    //                     .toLowerCase()
+                    //                     .contains(controller.selectedMenu
+                    //                         .toLowerCase())) {
+                    //                   return Container();
+                    //                 }
+                    //               }
+                    //               return InkWell(
+                    //                 onTap: () {
+                    //                   Navigator.push(
+                    //                     context,
+                    //                     MaterialPageRoute(
+                    //                         builder: (context) =>
+                    //                             DetailItemView(
+                    //                               item: item,
+                    //                             )),
+                    //                   );
+                    //                 },
+                    //                 child: Container(
+                    //                   height: 120.0,
+                    //                   width: 140.0,
+                    //                   margin: const EdgeInsets.only(top: 10.0),
+                    //                   decoration: const BoxDecoration(
+                    //                     borderRadius: BorderRadius.all(
+                    //                       Radius.circular(
+                    //                         5.0,
+                    //                       ),
+                    //                     ),
+                    //                   ),
+                    //                   child: Column(
+                    //                     children: [
+                    //                       Container(
+                    //                         height: 80.0,
+                    //                         width: 80.0,
+                    //                         decoration: BoxDecoration(
+                    //                             image: DecorationImage(
+                    //                               image: NetworkImage(
+                    //                                 "${item['photo']}",
+                    //                               ),
+                    //                               fit: BoxFit.cover,
+                    //                             ),
+                    //                             borderRadius:
+                    //                                 const BorderRadius.all(
+                    //                               Radius.circular(
+                    //                                 5.0,
+                    //                               ),
+                    //                             )),
+                    //                       ),
+                    //                       const SizedBox(
+                    //                         height: 5.0,
+                    //                       ),
+                    //                       Text(
+                    //                         "${item['menu_title']}",
+                    //                         textAlign: TextAlign.center,
+                    //                         style: const TextStyle(
+                    //                           fontSize: 12.0,
+                    //                           fontWeight: FontWeight.bold,
+                    //                         ),
+                    //                       ),
+                    //                     ],
+                    //                   ),
+                    //                 ),
+                    //               );
+                    //             },
+                    //           ),
+                    //         ),
+                    //       );
+                    //     },
+                    //   ),
+                    // ),
                   ],
                 ),
               ),

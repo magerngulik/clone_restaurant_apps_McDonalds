@@ -14,6 +14,7 @@
         "admin/add_item_menu_list",
         "admin/menu_order",
         "admin/detail_menu_order",
-        "admin/order_compleate"
+        "admin/order_compleate",
+        "main_dashboard"
     ]
 }
