@@ -58,23 +58,6 @@ class DashboardView extends StatefulWidget {
                       ),
                       child: Column(
                         children: [
-                          // Container(
-                          //   height: 125.0,
-                          //   decoration: BoxDecoration(
-                          //     image: DecorationImage(
-                          //       image: NetworkImage(
-                          //         "${item['photo1']}",
-                          //       ),
-                          //       fit: BoxFit.fitHeight,
-                          //     ),
-                          //     borderRadius: const BorderRadius.vertical(
-                          //       top: Radius.circular(
-                          //         10.0,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
-
                           Padding(
                             padding: const EdgeInsets.only(
                                 top: 20.0,

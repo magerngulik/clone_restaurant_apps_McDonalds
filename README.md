@@ -5,6 +5,7 @@ Ini hanya di peruntukan untuk proses pembelajaran tidak bermaksud untuk memperju
 
 ## Dependencies Flutter 
 Berikut ini merupakan depedensi yang di gunakan untuk pembuatan aplikasi ini:
+
 **cached_network_image:** ^3.2.2
 
 **card_swiper:** ^2.0.4
