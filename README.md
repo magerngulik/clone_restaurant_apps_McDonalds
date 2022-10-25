@@ -3,8 +3,23 @@
 ## Tentang Aplikasi
 Ini hanya di peruntukan untuk proses pembelajaran tidak bermaksud untuk memperjual belikan desain yang telah ada, ini merupakan aplikasi untuk pemesanan makanan secara online
 
+## Fitur
+### Admin Menu
+- menerima pesanan
+- menambahkan list menu
+- menambahkan item menu
+- menyelesaikan pesanan
+
+### User Menu
+- memilih service
+- memilih jenis pembayaran
+- menambahkan pesanan
+- membatalkan pesanan
+
+
 ## Dependencies Flutter 
 Berikut ini merupakan depedensi yang di gunakan untuk pembuatan aplikasi ini:
+
 **cached_network_image:** ^3.2.2
 
 **card_swiper:** ^2.0.4
