@@ -5,7 +5,7 @@ void main() async {
   await initialize();
 
   // Widget mainView = const MenuAdminView();
-  Widget mainView = const WaitingView();
+  Widget mainView = const DashboardView();
   runApp(
     MaterialApp(
       navigatorKey: Get.navigatorKey,

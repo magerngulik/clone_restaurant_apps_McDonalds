@@ -3,11 +3,19 @@ We believe, the class name must be unique.
 If there is a conflicting class name in this file,
 it means you have to rename it to something more unique.
 */
+export 'package:fhe_template/module/admin/add_item_menu_list/controller/add_item_menu_list_controller.dart';
+export 'package:fhe_template/module/admin/add_item_menu_list/view/add_item_menu_list_view.dart';
 export 'package:fhe_template/module/admin/add_menu_item/controller/add_menu_item_controller.dart';
 export 'package:fhe_template/module/admin/add_menu_item/view/add_menu_item_view.dart';
 export 'package:fhe_template/module/admin/add_menu_item/widget/dropdown_task.dart';
+export 'package:fhe_template/module/admin/dashboard/controller/dashboard_controller.dart';
+export 'package:fhe_template/module/admin/dashboard/view/dashboard_view.dart';
+export 'package:fhe_template/module/admin/item_menu_list/controller/item_menu_list_controller.dart';
+export 'package:fhe_template/module/admin/item_menu_list/view/item_menu_list_view.dart';
 export 'package:fhe_template/module/admin/menu_admin/controller/menu_admin_controller.dart';
 export 'package:fhe_template/module/admin/menu_admin/view/menu_admin_view.dart';
+export 'package:fhe_template/module/admin/menu_order/controller/menu_order_controller.dart';
+export 'package:fhe_template/module/admin/menu_order/view/menu_order_view.dart';
 export 'package:fhe_template/module/detail_item/controller/detail_item_controller.dart';
 export 'package:fhe_template/module/detail_item/view/detail_item_view.dart';
 export 'package:fhe_template/module/form_main_menu/controller/form_main_menu_controller.dart';

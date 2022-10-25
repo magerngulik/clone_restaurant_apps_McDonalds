@@ -8,6 +8,10 @@
         "admin/menu_admin",
         "admin/add_menu_item",
         "detail_item",
-        "order_item"
+        "order_item",
+        "admin/dashboard",
+        "admin/item_menu_list",
+        "admin/add_item_menu_list",
+        "admin/menu_order"
     ]
 }
