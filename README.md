@@ -2,6 +2,10 @@
 
 ## Tentang Aplikasi
 Ini hanya di peruntukan untuk proses pembelajaran tidak bermaksud untuk memperjual belikan desain yang telah ada, ini merupakan aplikasi untuk pemesanan makanan secara online
+## Kontributor 
+| Nama | Email    | Social Media  | Sebagai  |
+:---   | :--- | :--- | :--- |
+M.Zulkarnaen|Zulkarnaen70@gmail.com|[Instagram](https://www.instagram.com/zulkarnaimz/) . [Linkedin](http://www.linkedin.com/in/zulkarnaen137) . [GitHub](https://github.com/magerngulik) |Pengembang
 
 ## Fitur
 ### Admin Menu
@@ -17,14 +21,6 @@ Ini hanya di peruntukan untuk proses pembelajaran tidak bermaksud untuk memperju
 - membatalkan pesanan
 
 ## Screenshot
-### Screen Pilih Menu dan Screen Menu Admin
-![alt text](https://raw.githubusercontent.com/magerngulik/clone_restaurant_apps_McDonalds/main/lib/assets/presentation/1%20Selected%20Menu%20and%20menu%20admin.jpg)
-### Screen Order List dan Screen Detail Order
-![alt text](https://raw.githubusercontent.com/magerngulik/clone_restaurant_apps_McDonalds/main/lib/assets/presentation/2%20Order%20List%20and%20Detail%20Order%20.jpg)
-### Screen Menu item dan Screen Order Complete
-![alt text](https://raw.githubusercontent.com/magerngulik/clone_restaurant_apps_McDonalds/main/lib/assets/presentation/3%20Screen%20Menu%20Item%20and%20Order%20Compleate.jpg)
-### Screen Menu Item dan Screen Add or Edit Menu
-![alt text](https://raw.githubusercontent.com/magerngulik/clone_restaurant_apps_McDonalds/main/lib/assets/presentation/4%20Screen%20Menu%20item%20and%20add%20or%20edit.jpg)
 ### Screen Waiting dan Screen Select Service
 ![alt text](https://raw.githubusercontent.com/magerngulik/clone_restaurant_apps_McDonalds/main/lib/assets/presentation/8.jpg)
 ### Screen Payment dan Screen Menu Product
@@ -33,6 +29,14 @@ Ini hanya di peruntukan untuk proses pembelajaran tidak bermaksud untuk memperju
 ![alt text](https://github.com/magerngulik/clone_restaurant_apps_McDonalds/blob/main/lib/assets/presentation/10q.jpg)
 ### Screen Get Struct
 ![alt text](https://github.com/magerngulik/clone_restaurant_apps_McDonalds/blob/main/lib/assets/presentation/11.jpg)
+### Screen Pilih Menu dan Screen Menu Admin
+![alt text](https://raw.githubusercontent.com/magerngulik/clone_restaurant_apps_McDonalds/main/lib/assets/presentation/1%20Selected%20Menu%20and%20menu%20admin.jpg)
+### Screen Order List dan Screen Detail Order
+![alt text](https://raw.githubusercontent.com/magerngulik/clone_restaurant_apps_McDonalds/main/lib/assets/presentation/2%20Order%20List%20and%20Detail%20Order%20.jpg)
+### Screen Menu item dan Screen Order Complete
+![alt text](https://raw.githubusercontent.com/magerngulik/clone_restaurant_apps_McDonalds/main/lib/assets/presentation/3%20Screen%20Menu%20Item%20and%20Order%20Compleate.jpg)
+### Screen Menu Item dan Screen Add or Edit Menu
+![alt text](https://raw.githubusercontent.com/magerngulik/clone_restaurant_apps_McDonalds/main/lib/assets/presentation/4%20Screen%20Menu%20item%20and%20add%20or%20edit.jpg)
 
 ## Dependencies Flutter 
 Berikut ini merupakan depedensi yang di gunakan untuk pembuatan aplikasi ini:
@@ -71,7 +75,4 @@ Berikut ini merupakan depedensi yang di gunakan untuk pembuatan aplikasi ini:
 
 **material_design_icons_flutter:** ^5.0.6996
 
-## Kontributor 
-| Nama | Email    | Social Media  | Sebagai  |
-:---   | :--- | :--- | :--- |
-M.Zulkarnaen|Zulkarnaen70@gmail.com|[Instagram](https://www.instagram.com/zulkarnaimz/) . [Linkedin](http://www.linkedin.com/in/zulkarnaen137) . [GitHub](https://github.com/magerngulik) |Pengembang
+
