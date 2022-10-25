@@ -29,17 +29,10 @@ Ini hanya di peruntukan untuk proses pembelajaran tidak bermaksud untuk memperju
 ![alt text](https://raw.githubusercontent.com/magerngulik/clone_restaurant_apps_McDonalds/main/lib/assets/presentation/8.jpg)
 ### Screen Payment dan Screen Menu Product
 ![alt text](https://github.com/magerngulik/clone_restaurant_apps_McDonalds/blob/main/lib/assets/presentation/9q.jpg)
-### Screen Payment dan Screen Menu Product
+### Screen Input Quantity dan Screen Make Order
 ![alt text](https://github.com/magerngulik/clone_restaurant_apps_McDonalds/blob/main/lib/assets/presentation/10q.jpg)
-
-
-
-### Screen Terima Pesanan
-### Screen Pesanan Selesai
-### Screen List Menu
-### Screen Menu Item
-### Screen Add and Edit Menu Item
-
+### Screen Get Struct
+![alt text](https://github.com/magerngulik/clone_restaurant_apps_McDonalds/blob/main/lib/assets/presentation/11.jpg)
 
 ## Dependencies Flutter 
 Berikut ini merupakan depedensi yang di gunakan untuk pembuatan aplikasi ini:
